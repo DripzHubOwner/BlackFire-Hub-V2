@@ -1,0 +1,14 @@
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/twink"))()
+
+local MainUI = UILibrary.Load("BlackFire Hub")
+local FirstPage = MainUI.AddPage("Home")
+
+local FirstLabel = FirstPage.AddLabel("Section 1")
+local FirstButton = FirstPage.AddButton("Single Farm", function()
+game:GetService("ReplicatedStorage").Bindable.Client.eClick:FireServer()
+end)
+local FirstToggle = FirstPage.AddToggle("Auto Farm", false, function(Value)
+while wait() do
+game:GetService("ReplicatedStorage").Bindable.Client.eClick:FireServer()
+end
+end)
